@@ -1,7 +1,7 @@
 p {
     color: red;
     text-align: center;
-    border: 2px solid;
+    border: 2px solid black;
 }
 
 a {
@@ -13,13 +13,16 @@ a {
 }
 
 .myclass {
+    color: white;
     text-align: right;
+    background-color: rgb(125,0,250);
 }
 
 p.myclass {
 text-decoration: underline;
+boarder: none;
 }
 
 * {
-
+    background-color : rgba(0,0,0,.5)
 }
