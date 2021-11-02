@@ -1,0 +1,25 @@
+p {
+    color: red;
+    text-align: center;
+    border: 2px solid;
+}
+
+a {
+    color: purple;
+}
+
+#para1 {
+    color: green;
+}
+
+.myclass {
+    text-align: right;
+}
+
+p.myclass {
+text-decoration: underline;
+}
+
+* {
+
+}
