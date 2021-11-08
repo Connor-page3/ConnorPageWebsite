@@ -1,6 +1,6 @@
 
 body {
-    background-image:image("/ConnorPageWebsite/Assets/TrailBackground.jpg");
+    background-image: url("Assets/TrailBackground.jpg");
 
 }
 
