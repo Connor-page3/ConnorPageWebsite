@@ -1,8 +1,13 @@
 
 body {
+    border-radius: 8px;
     background-image: url("https://github.com/Connor-page3/ConnorPageWebsite/blob/main/Assets/TrailBackground.jpg?raw=true");
     max-width: 100%;
     height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 
 }
 
