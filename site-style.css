@@ -1,6 +1,8 @@
 
 body {
     background-image: url("https://github.com/Connor-page3/ConnorPageWebsite/blob/main/Assets/TrailBackground.jpg?raw=true");
+    max-width: 100%;
+    height: auto;
 
 }
 
