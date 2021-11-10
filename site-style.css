@@ -8,17 +8,11 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-
 }
 
-t {
-    color: white
-    text-align: center:
-
-}
 
 p {
-    color: red;
+    color: rgb(0, 0, 0);
     text-align: center;
     border: 2px solid rgb(255, 255, 255);
 }
