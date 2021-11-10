@@ -8,38 +8,20 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-
 p {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-size: 24px;
     text-align: center;
     border: 2px solid rgb(255, 255, 255);
 }
 
 a {
-    color: purple;
+    color: rgb(255, 255, 255)
+
 }
-
-#para1 {
-    color: green;
-    margin-top: 1in;
-    margin-left: 1.5in;
-    margin-right: 1.5in;
-    margin-bottom: 1in;
-}
-
-/*
-
-.myclass {
-    text-indent: 1in;
-    color: white;
-    text-align: right;
-    background-color: rgb(125,0,250);
-}
-
-p.myclass {
-text-decoration: underline;
-}
-
-*/
