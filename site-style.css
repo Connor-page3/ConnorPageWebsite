@@ -1,3 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+html{
+    width: 100vw;
+    height: 100vh;
+}
 
 body {
     border-radius: 8px;
@@ -8,17 +18,64 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+    height: 100%;
     background-attachment: fixed;
-    background-position: center;
+    background-position: center; /* top? */
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: Arial, Helvetica;
+    letter-spacing: 0.02em;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+}
+
+.blurred-box{
+    position: relative;
+    width: 250px;
+    height: 350px;
+    top: calc(50% - 175px);
+    left: calc(50% - 125px);
+    background: inherit;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.blurred-box:after{
+    content: '';
+    width: 300px;
+    height: 300px;
+    background: inherit; 
+    position: absolute;
+    left: -25px;
+    left: position;
+    right: 0;
+    top: -25px;  
+    top: position;
+    bottom: 0;
+    box-shadow: inset 0 0 0 200px rgba(255,255,255,0.05);
+    filter: blur(10px);
+}
+
+.user-icon{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    border-radius: 50%;
+    background-size: contain;
+    background-image: url(https://github.com/Connor-page3/ConnorPageWebsite/blob/main/Assets/IMG_8126.jpg?raw=true);
+}
+
+.user-name{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: white;
 }
 
 p {
     color: rgb(255, 255, 255);
-    font-size: 24px;
+    font-size: 36px;
     text-align: center;
-    border: 2px solid rgb(255, 255, 255);
+    
 }
 
 a {
