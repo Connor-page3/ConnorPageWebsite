@@ -3,16 +3,10 @@
     padding: 0;
 }
 
-
-html{
-    width: 100vw;
-    height: 100vh;
-}
-
 body {
     border-radius: 8px;
     background-image: url("https://github.com/Connor-page3/ConnorPageWebsite/blob/main/Assets/TrailBackground.jpg?raw=true");
-    max-width: 100%;
+    /* max-width: 100%; */
     height: auto;
     display: block;
     margin-left: auto;
@@ -20,7 +14,7 @@ body {
     width: 100%;
     height: 100%;
     background-attachment: fixed;
-    background-position: center; /* top? */
+    background-position: top; /* top? */
     background-repeat: no-repeat;
     background-size: cover;
     font-family: Arial, Helvetica;
@@ -33,10 +27,10 @@ body {
     position: relative;
     width: 250px;
     height: 350px;
-    top: calc(50% - 175px);
+    top: calc(50% - 450px);
     left: calc(50% - 125px);
     background: inherit;
-    border-radius: 2px;
+    border-radius: 5px;
     overflow: hidden;
 }
 
@@ -54,6 +48,7 @@ body {
     bottom: 0;
     box-shadow: inset 0 0 0 200px rgba(255,255,255,0.05);
     filter: blur(10px);
+    border-radius: 5px;
 }
 
 .user-icon{
@@ -62,7 +57,7 @@ body {
     position: relative;
     border-radius: 50%;
     background-size: contain;
-    background-image: url(https://github.com/Connor-page3/ConnorPageWebsite/blob/main/Assets/IMG_8126.jpg?raw=true);
+    background-image: url("https://github.com/Connor-page3/ConnorPageWebsite/blob/main/Assets/IMG_8126.jpg?raw=true");
 }
 
 .user-name{
@@ -71,14 +66,24 @@ body {
     color: white;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+    background-color:rgba(255,255,255,0.05);
+    padding: 14px 25px;
+    text-align: center;
+    position: static;
+    width: 100%;
+    text-decoration: none;
+    font-family: Arial, Helvetica;
+    letter-spacing: 0.02em;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    border-radius: 5px;
+}
 p {
     color: rgb(255, 255, 255);
-    font-size: 36px;
-    text-align: center;
-    
-}
-
-a {
-    color: rgb(255, 255, 255)
-
+    font-size: 32px;
+    width: calc(100%);
+    height: calc(50% - 200px)
 }
