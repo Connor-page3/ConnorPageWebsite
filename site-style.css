@@ -44,7 +44,7 @@
     right: 0; 
     top: position;
     bottom: 0;
-    box-shadow: inset 0 0 0 12.5em rgba(255,255,255,0.2);
+    box-shadow: inset 0 0 0 12.5em rgba(255,255,255,0.1);
     filter: blur(0.625em);
     border-radius: 0.3125em;
 }
