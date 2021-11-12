@@ -24,10 +24,10 @@
 
 .blurred-box{
     position: relative;
-    width: 15.625em;
-    height: 21.875em;
-    top: calc(50% - 21.875em); /* def. 175 */
-    left: calc(50% - 7.8125em); /* def. 125 */
+    width: 30em;
+    height: 40em;
+    top: calc(50% - 40em); /* def. 175 */
+    left: calc(50% - 15em); /* def. 125 */
     background: inherit;
     border-radius: 0.3125em;
     overflow: hidden;
@@ -36,8 +36,8 @@
 .blurred-box:after{
     content: '';
     opacity: 60%;
-    width: 15.625em;
-    height: 21.875em;
+    width: 30em;
+    height: 40em;
     background: inherit; 
     position: absolute;
     left: position;
