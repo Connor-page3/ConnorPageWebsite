@@ -52,7 +52,7 @@
 
 .centeredText {
     text-align: center;
-    transform: translate(0em, .5em);
+    transform: translate(0em, 1em);
     opacity: 60%;
 
 }
