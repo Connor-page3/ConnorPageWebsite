@@ -23,7 +23,7 @@
 } 
 
 .blurred-box{
-    position: static;
+    position:relative;
     opacity: .3;
     color: rgba(255,255,255,0.1);
     width: 70%;
