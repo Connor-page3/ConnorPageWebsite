@@ -24,11 +24,12 @@
 
 .blurred-box{
     position: relative;
+    opacity: .3;
     color: rgba(255,255,255,0.1);
     width: 5000em;
     height: 300em;
-    top: calc(50%); /* def. 175 */
-    left: calc(50%); /* def. 125 */
+    top: calc(50% - 150em); /* def. 175 */
+    left: calc(50% - 2500em); /* def. 125 */
     background: inherit;
     border-radius: 0.3125em;
     overflow: hidden;
