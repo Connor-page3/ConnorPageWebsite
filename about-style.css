@@ -23,7 +23,7 @@
 } 
 
 .blurred-box{
-    position: relative;
+    position: static;
     width: 5000em;
     height: 300em;
     top: calc(50%); /* def. 175 */
