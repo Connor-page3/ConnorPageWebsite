@@ -72,9 +72,3 @@ a {
     -webkit-font-smoothing: antialiased;
     border-radius: 0.3125em;
 }
-p {
-    color: rgb(255, 255, 255);
-    font-size: 2em;
-    width: calc(100%);
-    height: calc(50% - 12.5em);
-}
