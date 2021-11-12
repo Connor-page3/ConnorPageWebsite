@@ -24,7 +24,7 @@
 
 .blurred-box{
     position: relative;
-    width: 1000em;
+    width: 5000em;
     height: 300em;
     top: calc(50%); /* def. 175 */
     left: calc(50%); /* def. 125 */
@@ -36,8 +36,8 @@
 .blurred-box:after{
     content: '';
     opacity: 30%;
-    width: 30em;
-    height: 40em;
+    width: 5000em;
+    height: 300em;
     background: inherit; 
     position: absolute;
     left: position;
