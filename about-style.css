@@ -26,8 +26,6 @@
     position:relative;
     opacity: .3;
     color: rgba(255, 0, 0, 0.1);
-    width: ;
-    height: 50%;
     top: calc(50%); /* def. 175 */
     left: calc(50%); /* def. 125 */
     background: inherit;
