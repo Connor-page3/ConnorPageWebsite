@@ -4,7 +4,7 @@
 }
 
 .jumbotron {
-    border-radius: 8px;
+    border-radius: 10px;
     background-image: url("./Assets/TrailBackground.jpg");
     height: auto;
     display: block;
