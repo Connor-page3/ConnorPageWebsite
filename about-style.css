@@ -23,7 +23,7 @@
 } 
 
 .blurred-box{
-    position: static;
+    position: relative;
     width: 5000em;
     height: 300em;
     top: calc(50%); /* def. 175 */
@@ -33,20 +33,6 @@
     overflow: hidden;
 }
 
-.blurred-box:after{
-    content: '';
-    opacity: 30%;
-    width: 5000em;
-    height: 300em;
-    background: inherit; 
-    position: absolute;
-    left: position;
-    right: 0; 
-    top: position;
-    bottom: 0;
-    box-shadow: inset 0 0 0 12.5em rgba(255,255,255,0.1);
-    border-radius: 0.3125em;
-}
 
 
 .centeredText {
