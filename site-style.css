@@ -1,6 +1,26 @@
 * {
     box-sizing: border-box;
+    outline: solid 1px red;
 }
+}
+}
+html,
+body {
+  margin: 0;
+  height: 100%;
+  margin: 0
+}
+
+.main {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overscroll-behavior: contain;
+  }
+
 
 html {
     scroll-behavior:smooth;
@@ -37,7 +57,6 @@ html {
 .user-icon{
     width: 11em;
     height: 11em;
-    background-position: ;
     background-repeat: no-repeat;
     position:relative;
     text-align: center;
@@ -103,7 +122,7 @@ a {
 }
 a:hover {
     background-color: #e7e7e7;
-  color: white;
+    color: white;
 }
 
 section {
@@ -144,11 +163,13 @@ section article {
     font-family: Georgia, serif;
     letter-spacing: 0.02em;
     font-weight: 400;
+    overflow: hidden;
 }
 
 .button:hover {
     background-color: #e7e7e7;
   color: white;
+  overflow: hidden;
 }
 
 
@@ -161,6 +182,7 @@ section article {
     background-repeat: no-repeat;
     transform: rotate(90deg);
     margin: 0 auto;
+    scroll-margin-top: 20px;
   }
   
   .arrow {
@@ -208,3 +230,5 @@ section article {
     right: 10px;
     right: 30px;
   }
+
+
