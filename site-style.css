@@ -1,18 +1,12 @@
 * {
     box-sizing: border-box;
 }
-}
-}
-html,
-body {
-  margin: 0;
-  height: 100%;
-  margin: 0
-}
+
 
 .main {
     position: relative;
     top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
     width: 100%;
@@ -43,13 +37,13 @@ html {
     background: inherit;
     border-radius: 0.3125em;
     overflow: hidden;
-    background-color:rgba(255,255,255,0.3);
+    background-color:rgba(255, 255, 255, 0.2);
     margin: 0 auto;
     transform: translate(0em, 2.5em);
 }
 
 .blurred-box:hover {
-    background-color: #e7e7e7;
+    background-color: rgba(255, 255, 255, 0.4);
   color: white;
 }
 
@@ -106,7 +100,7 @@ a {
     text-decoration: none;
     overflow-x: hidden;
     color: white;
-    background-color:rgba(255,255,255,0.3);
+    background-color:rgba(255,255,255,0.4);
     padding: 0.875em 1.5625em;
     text-align: center;
     position: static;
@@ -120,7 +114,7 @@ a {
     border-radius: 0.3125em;
 }
 a:hover {
-    background-color: #e7e7e7;
+    background-color: rgba(255, 255, 255, 0.5);
     color: white;
 }
 
@@ -144,13 +138,13 @@ section {
 }
 section article {
     width: 600px;
-    margin: 80px auto 40px;
+    margin: 80px auto 200px;
     text-align: center;
 
 }
 
 .button {
-    background-color:rgba(255,255,255,0.3);
+    background-color:rgba(255,255,255,0.4);
     border: none;
     color: white;
     border-radius: 0.3125em;
@@ -162,13 +156,13 @@ section article {
     font-family: Georgia, serif;
     letter-spacing: 0.02em;
     font-weight: 400;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .button:hover {
-    background-color: #e7e7e7;
+    background-color: rgba(255, 255, 255, 0.5);
   color: white;
-  overflow: hidden;
+  overflow: visible;
 }
 
 
@@ -185,7 +179,7 @@ section article {
   }
   
   .arrow {
-    transform: translate(-18.75em,-1.3em);
+    transform: translate(-18.55em,-1.3em);
     position: absolute;
     top: 30%;
     left: 60%;
