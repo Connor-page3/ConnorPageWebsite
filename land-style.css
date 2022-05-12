@@ -1,6 +1,7 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
+
 html,
 body {
   margin: 0;
@@ -8,68 +9,60 @@ body {
 }
 
 .main {
-    position: relative;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    overscroll-behavior: contain;
-    font-size: 50;
-  }
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overscroll-behavior: contain;
+}
 
 
 html {
-    scroll-behavior:smooth;
+  scroll-behavior: smooth;
 }
 
 .hero {
-    position: fixed;
-    background: url("back.jpg") no-repeat center center;
-    width: 100vw;
-    height: 100vh;
-    font-size: 50;
-    background-size: cover;
-    font-family: Georgia, serif;
-    letter-spacing: 0.02em;
-    font-weight: 400;
-} 
+  position: relative;
+  background: url("back.jpg") no-repeat center center;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+}
 
 
 p {
-    text-align: center;
-}
-
-.text {
-    text-align: center;
-    font-size: 50;
-    transform: translate(0em, 10em);
-    opacity: 100%;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  margin-right: -80%;
+  transform: translate(-50%, -50%);
+  filter: blur(1px);
 }
 
 a {
-    text-decoration: none;
-    overflow-x: hidden;
-    color: white;
-    background-color:rgba(255,255,255,0.3);
-    padding: 0.875em 1.5625em;
-    text-align: center;
-    position: static;
-    width: 100vw;
-    height: 100vh;
-    font-size: 60;
-    text-decoration: none;
-    font-family: Georgia, serif;
-    letter-spacing: 0.02em;
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
-    border-radius: 0.3125em;
+  margin-right: .1em;
+  opacity: 100%;
+  border-radius: 0.3125em;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  font-weight: bold;
+  overflow-x: hidden;
+  color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 0.875em 1.5625em;
+  text-align: center;
+  font-family: Georgia, serif;
+  font: weight 500px;
+  ;
+  font-size: 10em;
+  letter-spacing: 0.04em
 }
+
 a:hover {
-    background-color: #e7e7e7;
-    color: white;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: white;
 }
-
-
-
-
