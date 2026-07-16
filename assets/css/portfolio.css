@@ -172,9 +172,10 @@ body {
 	text-align: center;
 }
 
-.experience-heading .section-label {
-	color: #8bdcf5;
+#experience .experience-heading .section-label {
+	color: #d8f6ff !important;
 	opacity: 1;
+	text-shadow: 0 1px 14px rgba(0, 0, 0, 0.45);
 }
 
 .experience-heading h2 {
@@ -182,14 +183,16 @@ body {
 	width: fit-content;
 }
 
-.experience-heading p:last-child {
-	color: #f5fbfd;
+#experience .experience-heading > p:last-child {
+	color: #ffffff !important;
 	font-size: 1rem;
-	font-weight: 500;
+	font-weight: 600;
 	line-height: 1.8;
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 42rem;
+	opacity: 1;
+	text-shadow: 0 1px 14px rgba(0, 0, 0, 0.45);
 	width: 100%;
 }
 
