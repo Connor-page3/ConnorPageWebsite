@@ -123,7 +123,13 @@ body {
 }
 
 .experience-section {
-	background: #242c35;
+	--experience-accent: #74c9e8;
+	--experience-alert: #ef5b55;
+	--experience-bg: #071722;
+	--experience-muted: rgba(224, 239, 246, 0.74);
+	background:
+		radial-gradient(circle at 50% 0, rgba(64, 145, 181, 0.22), transparent 34rem),
+		linear-gradient(180deg, #0c2535 0%, var(--experience-bg) 100%);
 }
 
 .experience-section > .inner {
@@ -137,8 +143,16 @@ body {
 	text-align: center;
 }
 
+.experience-heading .section-label {
+	color: var(--experience-alert);
+}
+
+.experience-heading h2 {
+	color: #f5fbfd;
+}
+
 .experience-heading p:last-child {
-	color: var(--portfolio-muted);
+	color: var(--experience-muted);
 	font-size: 1rem;
 	line-height: 1.8;
 	margin-left: auto;
@@ -166,21 +180,21 @@ body {
 }
 
 .career-date {
-	color: var(--portfolio-accent);
+	color: var(--experience-accent);
 	margin: 0;
 	padding-top: 2.15rem;
 	text-align: right;
 }
 
 .career-details {
-	border-left: 1px solid rgba(255, 255, 255, 0.16);
+	border-left: 1px solid rgba(116, 201, 232, 0.28);
 	padding: 1.8rem 0 2rem 2.5rem;
 	position: relative;
 }
 
 .career-details::before {
-	background: #242c35;
-	border: 2px solid rgba(120, 232, 215, 0.72);
+	background: var(--experience-bg);
+	border: 2px solid rgba(116, 201, 232, 0.8);
 	border-radius: 50%;
 	content: "";
 	height: 0.8rem;
@@ -191,8 +205,9 @@ body {
 }
 
 .career-entry-current .career-details::before {
-	background: var(--portfolio-accent);
-	box-shadow: 0 0 0 6px rgba(120, 232, 215, 0.1);
+	background: var(--experience-alert);
+	border-color: var(--experience-alert);
+	box-shadow: 0 0 0 6px rgba(239, 91, 85, 0.12);
 }
 
 .career-details h3 {
@@ -203,12 +218,21 @@ body {
 }
 
 .career-company {
-	color: rgba(255, 255, 255, 0.58);
+	color: rgba(245, 251, 253, 0.78);
+	margin-bottom: 0.35rem;
+}
+
+.career-organization {
+	color: var(--experience-accent);
+	font-size: 0.7rem;
+	font-weight: 700;
+	letter-spacing: 0.1em;
 	margin-bottom: 1rem;
+	text-transform: uppercase;
 }
 
 .career-details > p:last-child {
-	color: var(--portfolio-muted);
+	color: var(--experience-muted);
 	font-size: 0.98rem;
 	line-height: 1.8;
 	margin-bottom: 0;
@@ -216,18 +240,29 @@ body {
 }
 
 .career-project-link {
-	border-bottom: 1px solid rgba(120, 232, 215, 0.55);
+	border-bottom: 1px solid rgba(116, 201, 232, 0.62);
 	color: var(--portfolio-ink);
 }
 
 .career-project-link:hover,
 .career-project-link:focus {
-	border-bottom-color: var(--portfolio-accent);
-	color: var(--portfolio-accent) !important;
+	border-bottom-color: var(--experience-accent);
+	color: var(--experience-accent) !important;
 }
 
 .experience-actions {
 	margin-top: 2.5rem;
+}
+
+.experience-section .button.primary {
+	background-color: var(--experience-alert);
+	box-shadow: none;
+	color: #ffffff !important;
+}
+
+.experience-section .button.primary:hover,
+.experience-section .button.primary:focus {
+	background-color: #ff6c65;
 }
 
 .profile-spotlight .image img {
