@@ -149,31 +149,48 @@ body {
 }
 
 .experience-section > .inner {
+	margin-left: auto;
+	margin-right: auto;
 	max-width: 68rem;
+	width: 100%;
 }
 
 .experience-heading {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 48rem;
 	text-align: center;
+	width: 100%;
+}
+
+.experience-heading > * {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
 }
 
 .experience-heading .section-label {
-	color: var(--experience-alert);
+	color: #8bdcf5;
+	opacity: 1;
 }
 
 .experience-heading h2 {
 	color: #f5fbfd;
+	width: fit-content;
 }
 
 .experience-heading p:last-child {
-	color: var(--experience-muted);
+	color: #f5fbfd;
 	font-size: 1rem;
+	font-weight: 500;
 	line-height: 1.8;
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 42rem;
+	width: 100%;
 }
 
 .career-timeline {
@@ -348,6 +365,18 @@ body {
 
 #cta .inner header p:not(.section-label) {
 	max-width: 42rem;
+}
+
+#cta .credential-link {
+	border-bottom: 1px solid rgba(120, 232, 215, 0.65);
+	color: #ffffff;
+	font-weight: 600;
+}
+
+#cta .credential-link:hover,
+#cta .credential-link:focus {
+	border-bottom-color: var(--portfolio-accent);
+	color: var(--portfolio-accent) !important;
 }
 
 #footer .icons a:hover,
