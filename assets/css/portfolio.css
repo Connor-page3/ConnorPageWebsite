@@ -215,6 +215,17 @@ body {
 	max-width: 46rem;
 }
 
+.career-project-link {
+	border-bottom: 1px solid rgba(120, 232, 215, 0.55);
+	color: var(--portfolio-ink);
+}
+
+.career-project-link:hover,
+.career-project-link:focus {
+	border-bottom-color: var(--portfolio-accent);
+	color: var(--portfolio-accent) !important;
+}
+
 .experience-actions {
 	margin-top: 2.5rem;
 }
