@@ -173,7 +173,8 @@ body {
 }
 
 .experience-heading .section-label {
-	color: var(--experience-alert);
+	color: #8bdcf5;
+	opacity: 1;
 }
 
 .experience-heading h2 {
@@ -182,8 +183,9 @@ body {
 }
 
 .experience-heading p:last-child {
-	color: var(--experience-muted);
+	color: #f5fbfd;
 	font-size: 1rem;
+	font-weight: 500;
 	line-height: 1.8;
 	margin-left: auto;
 	margin-right: auto;
