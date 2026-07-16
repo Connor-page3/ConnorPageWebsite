@@ -367,6 +367,18 @@ body {
 	max-width: 42rem;
 }
 
+#cta .credential-link {
+	border-bottom: 1px solid rgba(120, 232, 215, 0.65);
+	color: #ffffff;
+	font-weight: 600;
+}
+
+#cta .credential-link:hover,
+#cta .credential-link:focus {
+	border-bottom-color: var(--portfolio-accent);
+	color: var(--portfolio-accent) !important;
+}
+
 #footer .icons a:hover,
 #footer .copyright a:hover {
 	color: var(--portfolio-accent) !important;
