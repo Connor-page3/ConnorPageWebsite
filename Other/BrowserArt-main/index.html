@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="An interactive pure-CSS sunset study by Connor J. Page. Move through daylight, golden hour, and night." />
+  <meta name="theme-color" content="#11182c" />
+  <title>Gradient Sunset | Browser Art</title>
+  <link rel="stylesheet" href="scribbler-global.css" />
+  <link rel="stylesheet" href="scribbler-landing.css" />
+</head>
+<body>
+  <a class="skip-link" href="#artwork">Skip to the artwork</a>
+
+  <header class="site-header">
+    <a class="brand" href="../../index.html" aria-label="Return to Connor J. Page portfolio">
+      <span>Connor J. Page</span>
+      <small>Browser Art</small>
+    </a>
+    <a class="back-link" href="../../index.html">Back to portfolio</a>
+  </header>
+
+  <main>
+    <section class="experience" id="artwork" aria-labelledby="art-title">
+      <div
+        class="scene"
+        id="scene"
+        tabindex="0"
+        role="group"
+        aria-label="Interactive sunset. Move your pointer or drag across the scene to change the time of day. Use left and right arrow keys to adjust time."
+      >
+        <div class="sky sky-day" aria-hidden="true"></div>
+        <div class="sky sky-sunset" aria-hidden="true"></div>
+        <div class="sky sky-night" aria-hidden="true"></div>
+        <div class="stars" id="stars" aria-hidden="true"></div>
+        <div class="sun-glow" aria-hidden="true"></div>
+        <div class="sun" aria-hidden="true"></div>
+        <div class="moon" aria-hidden="true"></div>
+        <div class="aircraft-flight" aria-hidden="true">
+          <div class="aircraft-lights">
+            <span class="aircraft-light aircraft-light-nav"></span>
+            <span class="aircraft-light aircraft-light-strobe"></span>
+            <span class="aircraft-light aircraft-light-beacon"></span>
+            <span class="aircraft-light aircraft-light-tail"></span>
+          </div>
+        </div>
+        <div class="mountains mountains-back" aria-hidden="true"></div>
+        <div class="mountains mountains-front" aria-hidden="true"></div>
+        <div class="horizon" aria-hidden="true"></div>
+        <div class="water" aria-hidden="true"></div>
+        <div class="reflection" aria-hidden="true"></div>
+        <div class="ripples" aria-hidden="true"></div>
+
+        <div class="art-heading">
+          <p class="eyebrow">Interactive gradient study</p>
+          <h1 id="art-title">Gradient Sunset</h1>
+          <p>Move through the sky and watch the horizon change.</p>
+        </div>
+
+        <div class="controls" aria-label="Sunset controls">
+          <div class="control-copy">
+            <span>Time of day</span>
+            <output id="time-label" for="time-control">Golden hour</output>
+          </div>
+          <input
+            id="time-control"
+            type="range"
+            min="0"
+            max="100"
+            value="52"
+            aria-label="Time of day"
+          />
+          <p>Drag across the artwork, use the slider, or press the arrow keys.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-notes" aria-labelledby="notes-title">
+      <div class="notes-intro">
+        <p class="eyebrow">FAS 376 · Restored study</p>
+        <h2 id="notes-title">A sunset drawn in the browser.</h2>
+        <p>
+          This interactive piece uses layered gradients, CSS shapes, and a small amount of JavaScript.
+          The original experiment has been refined for modern screens while preserving its day-to-night idea.
+        </p>
+      </div>
+
+      <div class="note-grid">
+        <article>
+          <span class="note-number">01</span>
+          <h3>Pure CSS scenery</h3>
+          <p>The sun, water, mountains, stars, glow, and reflections are composed without image assets.</p>
+        </article>
+        <article>
+          <span class="note-number">02</span>
+          <h3>Responsive canvas</h3>
+          <p>The composition scales from small phones to wide desktops while keeping the horizon in view.</p>
+        </article>
+        <article>
+          <span class="note-number">03</span>
+          <h3>Multiple ways to play</h3>
+          <p>Pointer, touch, slider, and keyboard controls all drive the same accessible time-of-day model.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Original browser-art study by Connor J. Page.</p>
+    <a href="../../index.html">Return to the portfolio</a>
+  </footer>
+
+  <script src="art.js"></script>
+</body>
+</html>

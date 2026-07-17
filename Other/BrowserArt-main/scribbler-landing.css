@@ -1,0 +1,557 @@
+.experience {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+.scene {
+  --time: 0.52;
+  --sun-x: 58%;
+  --sun-y: 49%;
+  --sky-sun-y: 91%;
+  --moon-x: 62%;
+  --moon-y: 22%;
+  --day-opacity: 0.7;
+  --sunset-opacity: 0.96;
+  --night-opacity: 0.08;
+  --star-opacity: 0;
+  --moon-opacity: 0;
+  --sun-opacity: 1;
+  --reflection-opacity: 0.9;
+  background: #070b18;
+  cursor: crosshair;
+  height: 100vh;
+  height: 100svh;
+  isolation: isolate;
+  min-height: 34rem;
+  overflow: hidden;
+  position: relative;
+  touch-action: none;
+}
+
+.scene:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: -3px;
+}
+
+.sky,
+.horizon,
+.water,
+.reflection,
+.ripples,
+.mountains,
+.stars {
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.sky {
+  bottom: 46%;
+  transition: opacity 280ms ease;
+}
+
+.sky-day {
+  background:
+    radial-gradient(circle at var(--sun-x) var(--sky-sun-y), rgba(255, 250, 214, 0.95) 0 2%, rgba(255, 211, 119, 0.35) 9%, transparent 28%),
+    linear-gradient(to bottom, #4f91c8 0%, #91c6dc 48%, #f6d7aa 100%);
+  opacity: var(--day-opacity);
+}
+
+.sky-sunset {
+  background:
+    radial-gradient(circle at var(--sun-x) var(--sky-sun-y), rgba(255, 247, 198, 0.9) 0 2%, rgba(255, 142, 72, 0.6) 10%, transparent 32%),
+    linear-gradient(to bottom, #22284e 0%, #6f4e72 42%, #e8785e 72%, #ffc06b 100%);
+  opacity: var(--sunset-opacity);
+}
+
+.sky-night {
+  background: linear-gradient(to bottom, #02050f 0%, #0c1530 58%, #3e3453 100%);
+  opacity: var(--night-opacity);
+}
+
+.stars {
+  bottom: 46%;
+  opacity: var(--star-opacity);
+  overflow: hidden;
+  transition: opacity 240ms ease;
+}
+
+.star {
+  animation: twinkle var(--twinkle-duration, 3.8s) ease-in-out infinite alternate;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  box-shadow: 0 0 0.45rem rgba(255, 255, 255, 0.55);
+  height: var(--star-size, 2px);
+  left: var(--star-left);
+  opacity: var(--star-alpha, 0.7);
+  position: absolute;
+  top: var(--star-top);
+  width: var(--star-size, 2px);
+}
+
+.sun-glow,
+.sun,
+.moon {
+  left: var(--sun-x);
+  pointer-events: none;
+  position: absolute;
+  top: var(--sun-y);
+  transform: translate(-50%, -50%);
+  transition: opacity 220ms ease;
+}
+
+.sun-glow {
+  background: radial-gradient(circle, rgba(255, 207, 105, 0.36), transparent 68%);
+  height: clamp(13rem, 34vw, 32rem);
+  opacity: var(--sun-opacity);
+  width: clamp(13rem, 34vw, 32rem);
+  z-index: 4;
+}
+
+.sun {
+  background: #fff2b7;
+  border-radius: 50%;
+  box-shadow: 0 0 2.2rem rgba(255, 196, 91, 0.78);
+  height: clamp(2.8rem, 7vw, 5.8rem);
+  opacity: var(--sun-opacity);
+  width: clamp(2.8rem, 7vw, 5.8rem);
+  z-index: 5;
+}
+
+.moon {
+  background: #e8f3ff;
+  border-radius: 50%;
+  box-shadow: 0 0 1.6rem rgba(190, 222, 255, 0.65);
+  height: clamp(2.2rem, 5vw, 4rem);
+  left: var(--moon-x);
+  opacity: var(--moon-opacity);
+  overflow: hidden;
+  top: var(--moon-y);
+  width: clamp(2.2rem, 5vw, 4rem);
+  z-index: 5;
+}
+
+.moon::after {
+  background: #12203c;
+  border-radius: 50%;
+  content: "";
+  height: 100%;
+  left: 24%;
+  position: absolute;
+  top: -10%;
+  width: 100%;
+}
+
+.aircraft-flight {
+  animation: aircraft-pass 20s linear infinite;
+  left: calc(100% + 4rem);
+  pointer-events: none;
+  position: absolute;
+  top: clamp(4.5rem, 10vh, 7rem);
+  z-index: 12;
+}
+
+.aircraft-lights {
+  height: 1rem;
+  opacity: 0;
+  position: relative;
+  transition: opacity 900ms ease;
+  width: 3.5rem;
+}
+
+.scene.is-deep-night .aircraft-lights {
+  opacity: 1;
+}
+
+.aircraft-lights::before {
+  background: rgba(8, 13, 26, 0.72);
+  content: "";
+  height: 1px;
+  left: 0.7rem;
+  position: absolute;
+  top: 0.48rem;
+  transform: rotate(-5deg);
+  width: 2.25rem;
+}
+
+.aircraft-light {
+  border-radius: 50%;
+  height: 0.24rem;
+  position: absolute;
+  width: 0.24rem;
+}
+
+.aircraft-light-nav {
+  animation: aircraft-nav-blink 1.55s ease-in-out infinite;
+  background: #ff3131;
+  box-shadow: 0 0 0.35rem #ff3131, 0 0 0.8rem rgba(255, 49, 49, 0.75);
+  left: 0.62rem;
+  top: 0.68rem;
+}
+
+.aircraft-light-strobe {
+  animation: aircraft-strobe 0.92s steps(1, end) infinite;
+  background: #fff;
+  box-shadow: 0 0 0.45rem #fff, 0 0 1rem rgba(220, 239, 255, 0.9);
+  left: 0.46rem;
+  opacity: 0;
+  top: 0.57rem;
+}
+
+.aircraft-light-beacon {
+  animation: aircraft-beacon 1.28s steps(1, end) infinite;
+  background: #ff3b36;
+  box-shadow: 0 0 0.45rem rgba(255, 59, 54, 0.85);
+  left: 1.72rem;
+  opacity: 0.25;
+  top: 0.16rem;
+}
+
+.aircraft-light-tail {
+  background: #eaf4ff;
+  box-shadow: 0 0 0.35rem rgba(234, 244, 255, 0.72);
+  left: 2.95rem;
+  opacity: 0.6;
+  top: 0.4rem;
+}
+
+.horizon {
+  background: linear-gradient(to bottom, transparent 0 43%, rgba(255, 155, 73, 0.28) 49%, rgba(4, 8, 21, 0.08) 55%);
+  z-index: 6;
+}
+
+.mountains {
+  --mountain-base: #292d40;
+  --mountain-height: 22%;
+  --mountain-mid: #343447;
+  --mountain-opacity: 0.78;
+  --mountain-top: #5b5368;
+  bottom: 46%;
+  background: linear-gradient(
+    to bottom,
+    var(--mountain-top) 0%,
+    var(--mountain-mid) 72%,
+    var(--mountain-base) 100%
+  );
+  clip-path: polygon(var(--mountain-ridge));
+  filter: drop-shadow(0 0.35rem 0.65rem rgba(5, 8, 20, 0.18));
+  height: var(--mountain-height);
+  opacity: var(--mountain-opacity);
+  top: auto;
+  transform-origin: bottom center;
+  z-index: 8;
+}
+
+.mountains-back {
+  --mountain-ridge:
+    0 100%, 0 79%, 5% 70%, 10% 76%, 16% 59%, 21% 69%,
+    27% 52%, 33% 67%, 40% 43%, 47% 70%, 54% 55%,
+    61% 73%, 68% 50%, 74% 66%, 81% 57%, 87% 72%,
+    93% 62%, 100% 76%, 100% 100%;
+}
+
+.mountains-front {
+  --mountain-base: #0b1020;
+  --mountain-height: 15%;
+  --mountain-mid: #111525;
+  --mountain-opacity: 0.96;
+  --mountain-ridge:
+    0 100%, 0 83%, 7% 74%, 13% 80%, 21% 68%, 29% 78%,
+    37% 63%, 45% 80%, 53% 71%, 61% 82%, 70% 66%,
+    78% 79%, 86% 70%, 93% 77%, 100% 71%, 100% 100%;
+  --mountain-top: #24283a;
+}
+
+.water {
+  background: linear-gradient(to bottom, #315e72 0%, #173c54 36%, #081a2d 100%);
+  top: 54%;
+  z-index: 3;
+}
+
+.reflection {
+  background: radial-gradient(
+    ellipse 58% 105% at var(--sun-x) 0%,
+    rgba(247, 177, 72, 1) 0%,
+    rgba(248, 175, 65, 0.9) 6%,
+    rgba(207, 62, 30, 0.4) 35%,
+    rgba(176, 91, 48, 0.1) 45%,
+    rgba(141, 88, 47, 0) 60%,
+    rgba(116, 82, 63, 0) 70%,
+    rgba(44, 65, 68, 0) 80%,
+    rgba(7, 19, 31, 0) 100%
+  );
+  background-repeat: no-repeat;
+  bottom: 0;
+  filter: blur(0.3px);
+  left: 0;
+  mix-blend-mode: screen;
+  opacity: var(--reflection-opacity);
+  right: auto;
+  top: 54%;
+  transform: none;
+  transform-origin: top center;
+  transition: opacity 220ms ease;
+  width: 100%;
+  z-index: 7;
+}
+
+.ripples {
+  background-image: repeating-linear-gradient(176deg, transparent 0 5px, rgba(255, 255, 255, 0.075) 6px, transparent 8px 14px);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), #000);
+  top: 54%;
+  z-index: 9;
+}
+
+.art-heading {
+  left: clamp(1rem, 5vw, 4rem);
+  max-width: min(37rem, calc(100% - 2rem));
+  pointer-events: none;
+  position: absolute;
+  top: clamp(6.8rem, 18vh, 10rem);
+  z-index: 20;
+}
+
+.art-heading h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.5rem, 7vw, 6.8rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.92;
+  margin: 0;
+  max-width: 8ch;
+  text-wrap: balance;
+}
+
+.art-heading > p:last-child {
+  color: var(--muted);
+  font-size: clamp(0.82rem, 1.5vw, 1rem);
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+  margin: 1.25rem 0 0;
+  max-width: 34ch;
+  text-transform: uppercase;
+}
+
+.controls {
+  backdrop-filter: blur(18px);
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 1rem;
+  bottom: clamp(1rem, 4vw, 2.5rem);
+  box-shadow: 0 1.4rem 4rem rgba(0, 0, 0, 0.3);
+  left: 50%;
+  max-width: min(42rem, calc(100% - 2rem));
+  padding: 1rem 1.2rem;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 25;
+}
+
+.control-copy {
+  align-items: baseline;
+  display: flex;
+  font-size: 0.7rem;
+  font-weight: 700;
+  justify-content: space-between;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.control-copy output {
+  color: var(--accent);
+}
+
+.controls input[type="range"] {
+  --slider-progress: 52%;
+  appearance: none;
+  background: linear-gradient(
+    to right,
+    var(--accent) 0 var(--slider-progress),
+    rgba(255, 255, 255, 0.18) var(--slider-progress) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  cursor: pointer;
+  height: 0.5rem;
+  margin: 0.8rem 0 0.35rem;
+  outline: none;
+  width: 100%;
+}
+
+.controls input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  background: #ffd179;
+  border: 2px solid #fff0ca;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.3rem rgba(255, 184, 77, 0.18), 0 0.2rem 0.7rem rgba(0, 0, 0, 0.35);
+  height: 1rem;
+  width: 1rem;
+}
+
+.controls input[type="range"]::-moz-range-thumb {
+  background: #ffd179;
+  border: 2px solid #fff0ca;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.3rem rgba(255, 184, 77, 0.18), 0 0.2rem 0.7rem rgba(0, 0, 0, 0.35);
+  height: 0.75rem;
+  width: 0.75rem;
+}
+
+.controls input[type="range"]:focus-visible {
+  box-shadow: 0 0 0 0.22rem rgba(255, 194, 102, 0.3);
+}
+
+.controls > p {
+  color: var(--muted);
+  font-size: 0.68rem;
+  margin: 0;
+  text-align: center;
+}
+
+.project-notes {
+  display: grid;
+  gap: clamp(3rem, 7vw, 7rem);
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  margin: 0 auto;
+  max-width: 76rem;
+  padding: clamp(5rem, 10vw, 9rem) clamp(1rem, 4vw, 3rem);
+}
+
+.notes-intro h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.3rem, 5vw, 4.8rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.notes-intro > p:last-child {
+  color: var(--muted);
+  line-height: 1.8;
+  margin: 1.5rem 0 0;
+  max-width: 42rem;
+}
+
+.note-grid {
+  border-top: 1px solid var(--line);
+}
+
+.note-grid article {
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: 0.5rem 1.25rem;
+  grid-template-columns: 2.5rem 1fr;
+  padding: 1.5rem 0;
+}
+
+.note-number {
+  color: var(--accent);
+  font-size: 0.68rem;
+  grid-row: 1 / 3;
+  letter-spacing: 0.15em;
+}
+
+.note-grid h3 {
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
+.note-grid p {
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.35; }
+  to { opacity: 1; }
+}
+
+@keyframes aircraft-pass {
+  0% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  6% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(calc(-100vw - 8rem));
+  }
+}
+
+@keyframes aircraft-nav-blink {
+  0%, 68%, 100% { opacity: 1; }
+  76%, 90% { opacity: 0.18; }
+}
+
+@keyframes aircraft-strobe {
+  0%, 8%, 16%, 100% { opacity: 0; }
+  4%, 12% { opacity: 1; }
+}
+
+@keyframes aircraft-beacon {
+  0%, 12%, 100% { opacity: 0.18; }
+  5% { opacity: 1; }
+}
+
+@media (max-width: 720px) {
+  .scene {
+    min-height: 100svh;
+  }
+
+  .art-heading {
+    text-align: center;
+    width: calc(100% - 2rem);
+  }
+
+  .art-heading h1,
+  .art-heading > p:last-child {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .art-heading h1 {
+    max-width: 10ch;
+  }
+
+  .controls {
+    bottom: calc(1rem + env(safe-area-inset-bottom));
+  }
+
+  .project-notes {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-height: 680px) and (orientation: landscape) {
+  .scene {
+    min-height: 34rem;
+  }
+
+  .art-heading {
+    top: 5.5rem;
+  }
+
+  .art-heading h1 {
+    font-size: clamp(2.2rem, 8vw, 4.5rem);
+  }
+
+  .art-heading > p:last-child {
+    margin-top: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star {
+    animation: none;
+  }
+}
