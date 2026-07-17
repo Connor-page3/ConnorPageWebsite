@@ -10,7 +10,9 @@
 		$body = $('body'),
 		$wrapper = $('#page-wrapper'),
 		$banner = $('#banner'),
-		$header = $('#header');
+		$header = $('#header'),
+		$menu = $('#menu'),
+		menuDelay = 500;
 
 	// Breakpoints.
 		breakpoints({
@@ -44,19 +46,19 @@
 		}
 
 	// Scrolly.
-		$('.scrolly')
+		$('.scrolly').not('#menu .scrolly')
 			.scrolly({
 				speed: 1500,
 				offset: $header.outerHeight()
 			});
 
 	// Menu.
-		$('#menu')
+		$menu
 			.append('<a href="#menu" class="close"></a>')
 			.appendTo($body)
 			.panel({
-				delay: 500,
-				hideOnClick: true,
+				delay: menuDelay,
+				hideOnClick: false,
 				hideOnSwipe: true,
 				resetScroll: true,
 				resetForms: true,
@@ -64,6 +66,35 @@
 				target: $body,
 				visibleClass: 'is-menu-visible'
 			});
+
+		// Close the menu before scrolling to an on-page section. Keeping this
+		// separate from Scrolly avoids two animations fighting over the viewport.
+		$menu.on('click', 'a[href^="#"]:not(.close)', function(event) {
+			var href = $(this).attr('href'),
+				$target = $(href);
+
+			if ($target.length === 0)
+				return;
+
+			event.preventDefault();
+			$body.removeClass('is-menu-visible');
+
+			window.setTimeout(function() {
+				var targetTop = Math.max(0, $target.offset().top - $header.outerHeight()),
+					reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+				window.history.pushState(null, '', href);
+				window.scrollTo({
+					top: targetTop,
+					behavior: reduceMotion ? 'auto' : 'smooth'
+				});
+			}, menuDelay);
+		});
+
+		// External menu links can navigate normally, but should still dismiss the panel.
+		$menu.on('click', 'a:not([href^="#"])', function() {
+			$body.removeClass('is-menu-visible');
+		});
 
 	// Header.
 		if ($banner.length > 0
